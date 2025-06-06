@@ -1,0 +1,20 @@
+.barra-navegacao {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* para ficar acima de tudo */
+  background-color: #111;
+  border-bottom: 3px solid #414141;
+  box-shadow: #111 0px 1px 10px;
+}
+
+.container-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 70px;
+}
