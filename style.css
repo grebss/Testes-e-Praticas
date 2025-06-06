@@ -1,11 +1,18 @@
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  padding-top: 70px;
+}
+
 .barra-navegacao {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 9%;
   z-index: 1000; /* para ficar acima de tudo */
   background-color: #111;
   border-bottom: 3px solid #414141;
-  box-shadow: #111 0px 1px 10px;
 }
 
 .container-nav {
@@ -17,4 +24,119 @@
   justify-content: space-between;
   flex-wrap: wrap;
   height: 70px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.menu li a:hover {
+  color: #b91d1d;
+}
+
+.nav-logo {
+  height: 65px;
+  padding-top: 11%;
+  justify-content: flex-start;
+}
+
+/*ESTILO DO MENU HAMBURGUER*/
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  justify-content: flex-end;
+}
+
+.nav-toggle .hamburguer,
+.nav-toggle.ativo .hamburguer {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-toggle .hamburguer::before,
+.nav-toggle .hamburguer::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-toggle .hamburguer::before {
+  top: -8px;
+}
+
+.nav-toggle .hamburguer::after {
+  top: 8px;
+}
+
+.nav-toggle.ativo .hamburguer {
+  background-color: transparent;
+}
+
+.nav-toggle.ativo .hamburguer::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-toggle.ativo .hamburguer::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.nav-logo, .nav-menu, .nav-toggle {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none !important; /* força esconder o menu */
+    flex-direction: column;
+    gap: 10px;
+    background-color: #111;
+    padding: 10px 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu.ativo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #111;
+    padding: 10px 0;
+    position: absolute;
+    top: 70px; /* abaixo da navbar */
+    left: 0;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
 }
