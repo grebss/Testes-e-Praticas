@@ -111,6 +111,10 @@ body {
   align-items: center;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 @media (max-width: 768px) {
   .nav-menu.ativo {
     display: flex;
